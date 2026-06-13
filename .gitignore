@@ -1,10 +1,24 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+# Entorno virtual
+.venv/
 
-# Virtual environments
-.venv
+# uv
+.python-version
+uv.lock
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Variables de entorno
+.env
+
+# VS Code
+.vscode/
+
+# Docker volúmenes locales (no aplica, el volumen vive en Docker)
+# postgres_data/ — gestionado por Docker, no aparece en el repo

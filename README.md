@@ -43,10 +43,11 @@ Debe mostrar algo como `Docker version 26.x.x`.
 
 ## 2. Configurar el entorno Python
 
+Abrí una terminal **dentro de la carpeta ** y ejecutá:
+
 ```bash
-# Crear la carpeta del proyecto
-uv init sql-aprendizaje
-cd sql-aprendizaje
+# Inicializar el proyecto en la carpeta actual
+uv init .
 
 # Instalar dependencias
 uv add jupyter psycopg2-binary ipykernel
