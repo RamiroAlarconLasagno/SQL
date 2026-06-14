@@ -1,24 +1,22 @@
+# .gitignore
+
 # Entorno virtual
 .venv/
 
-# uv
-.python-version
-uv.lock
-
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb_checkpoints
+
+# Variables de entorno
+.env
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
 
-# Variables de entorno
-.env
-
 # VS Code
 .vscode/
 
-# Docker volúmenes locales (no aplica, el volumen vive en Docker)
-# postgres_data/ — gestionado por Docker, no aparece en el repo
+# OS
+Thumbs.db
+.DS_Store
