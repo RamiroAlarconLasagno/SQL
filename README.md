@@ -92,7 +92,7 @@ docker compose down -v
 ## 4. Abrir el notebook en VS Code
 
 1. Abrir VS Code en la carpeta del proyecto
-2. Abrir `sql_psycopg.ipynb` o `sql_sqlalchemy.ipynb` segun el driver a usar
+2. Abrir el notebook segun el tema a trabajar (ver seccion 7)
 3. Seleccionar el kernel: `Ctrl+Shift+P` → **Jupyter: Select Kernel** → **Python Environments** → seleccionar el `.venv` del proyecto
 4. Ejecutar las celdas de la seccion 0 para verificar la conexion
 
@@ -118,14 +118,17 @@ Definidas en `docker-compose.yml`, ya configuradas en los notebooks:
 sql-aprendizaje/
 ├── README.md                  # Este archivo
 ├── docker-compose.yml         # Configuracion de PostgreSQL
-├── sql_psycopg.ipynb          # Notebook con driver psycopg v3
-├── sql_sqlalchemy.ipynb       # Notebook con SQLAlchemy 2 + psycopg v3
+├── sql_psycopg.ipynb          # SQL puro con psycopg v3
+├── sql_sqlalchemy.ipynb       # ORM y Core con SQLAlchemy 2
+├── sql_avanzado.ipynb         # Temas avanzados con psycopg y SQLAlchemy
 └── pyproject.toml             # Dependencias del proyecto (generado por uv)
 ```
 
 ---
 
 ## 7. Temas cubiertos en los notebooks
+
+### `sql_psycopg.ipynb` — SQL puro con psycopg v3
 
 | Seccion | Temas |
 |---------|-------|
@@ -137,12 +140,34 @@ sql-aprendizaje/
 | 06 — JOINs | INNER, LEFT, RIGHT, FULL, SELF JOIN, CROSS JOIN |
 | 07 — Subconsultas | Escalares, correlacionadas, IN/EXISTS |
 | 08 — Normalizacion | 1NF, 2NF, 3NF — teoria y ejercicios |
+
+### `sql_sqlalchemy.ipynb` — ORM y Core con SQLAlchemy 2
+
+| Seccion | Temas |
+|---------|-------|
+| 00 — Conexion | Engine, Session, text(), ejecutar_query() |
+| 01 — DDL con Core | MetaData, Table, Column, tipos, constraints, create_all |
+| 02 — INSERT con Core | insert(), executemany, returning() |
+| 03 — SELECT con Core | select(), where(), join(), group_by(), having(), func |
+| 04 — Modelos ORM | DeclarativeBase, Mapped, mapped_column, relationship |
+| 05 — CRUD con ORM | session.add(), session.get(), update(), delete(), manejo de errores |
+| 06 — Consultas avanzadas | Filtros, joins, subconsultas con ORM |
+| 07 — Eager vs Lazy loading | selectinload, joinedload, lazy loading |
+| 08 — Transacciones | Session, commit, rollback, savepoint |
+| 09 — Migraciones | Alembic: init, revision, upgrade, downgrade |
+
+### `sql_avanzado.ipynb` — Temas avanzados con psycopg y SQLAlchemy
+
+| Seccion | Temas |
+|---------|-------|
 | 09 — Indices | Por que existen, cuando usarlos, EXPLAIN ANALYZE |
 | 10 — Window Functions | ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, PARTITION BY |
 | 11 — CTEs | WITH, CTEs recursivas |
 | 12 — Transacciones | ACID, COMMIT, ROLLBACK, SAVEPOINT |
 | 13 — Vistas | CREATE VIEW, casos de uso |
-| 14 — CRUD en Python | psycopg v3 y SQLAlchemy 2, parametros seguros, manejo de errores |
+
+Cada seccion muestra el mismo concepto implementado con ambas librerias
+para comparar el enfoque de SQL puro vs la abstraccion de SQLAlchemy.
 
 ---
 
@@ -153,3 +178,4 @@ sql-aprendizaje/
 - Cada seccion incluye explicacion en Markdown, query comentado y resultado visible.
 - `sql_psycopg.ipynb` — SQL puro, control total, mas cercano al motor.
 - `sql_sqlalchemy.ipynb` — abstraccion ORM, orientado a uso en aplicaciones Python.
+- `sql_avanzado.ipynb` — comparacion lado a lado de ambos enfoques en temas avanzados.
